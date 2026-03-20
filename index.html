@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Letter to Joy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .letter-container {
+            max-width: 700px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .letter p {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            margin-bottom: 15px;
+        }
+        .letter p.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .date {
+            text-align: right;
+            color: #555;
+        }
+        .signature {
+            margin-top: 40px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="letter-container">
+    <div class="letter" id="letter">
+        <p class="date">March 20, 2026</p>
+
+        <p>Hey Joy,</p>
+
+        <p>I’m really sorry about what happened earlier when we said that the pause in the scene was “pangit.” It wasn’t our intention to put down your work.</p>
+
+        <p>We were probably just stressed at that time and ended up using the wrong wording. That’s on us, and I apologize for that.</p>
+
+        <p>Again, I’m sorry for what happened. It might have just been a misunderstanding or a communication issue.</p>
+
+        <p>Sincerely,</p>
+
+        <p class="signature">Emerson</p>
+    </div>
+
+    <button onclick="revealLetter()">Click to Read Letter</button>
+</div>
+
+<script>
+    function revealLetter() {
+        const paragraphs = document.querySelectorAll('#letter p');
+        paragraphs.forEach((p, index) => {
+            setTimeout(() => {
+                p.classList.add('show');
+            }, index * 500); 
+        });
+    }
+</script>
+
+</body>
+</html>
